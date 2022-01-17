@@ -8,7 +8,7 @@ TWO_DB    = True
 POSTGRES  = True
 
 if __name__ == "__main__":
-    l, m, h, vh, vvh = load_dataset_from_folder("14-01-2022_14-18-08-215806")
+    l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
 
     data_length = len(l)
     step_size = int(data_length/20)
