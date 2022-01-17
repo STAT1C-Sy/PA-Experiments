@@ -165,7 +165,7 @@ def create_dataset(numberOfEntries):
     return prefix
 
 def load_dataset_from_folder(folder):
-    files = [ folder + "\\dataset_low.json", folder + "\\dataset_mid.json", folder + "\\dataset_high.json", folder + "\\dataset_veryhigh.json", folder + "\\dataset_veryveryhigh.json" ]
+    files = [ './' + folder + "/dataset_low.json", './' + folder + "/dataset_mid.json", './' + folder + "/dataset_high.json",  './' + folder + "/dataset_veryhigh.json", './' + folder + "/dataset_veryveryhigh.json" ]
     data = []
     for f in files:
         with open(f) as fobj:
