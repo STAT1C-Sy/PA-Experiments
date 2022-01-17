@@ -132,15 +132,24 @@ def generate_customfield_dataset(number_of_entries, vo_lower_bound, vo_upper_bou
 
 def create_customfield_dataset(filename, number_of_entries, vo_lower_bound, vo_upper_bound):
     fobj = open(filename, "w")
+    fobj.write("[\n")
     fobj.close()
+    dir = os.path.dirname(filename)
+    if not os.path.exists(dir):
+        os.mkdir(dir)
 
-    for i in range(1, 4):
-        dataset = generate_customfield_dataset(number_of_entries/a, vo_lower_bound, vo_upper_bound)
-        dir = os.path.dirname(filename)
-        if not os.path.exists(dir):
-            os.mkdir(dir)
+    for i in range(number_of_entries - 1):
+        dataset = generate_customfield_dataset(1, vo_lower_bound, vo_upper_bound)[0]
         with open(filename, "a") as fobj:
-            fobj.write(json.dumps(dataset, indent=4))
+            fobj.write(json.dumps(dataset, indent=4) + ',\n')
+        
+    dataset = generate_customfield_dataset(1, vo_lower_bound, vo_upper_bound)[0]
+    with open(filename, "a") as fobj:
+        fobj.write(json.dumps(dataset, indent=4) + '\n')
+
+    fobj = open(filename, "w")
+    fobj.write("\n]")
+    fobj.close()
 
 def get_prefix():
     return "./" + datetime.now().strftime("%d-%m-%Y_%H-%M-%S-%f")
