@@ -148,7 +148,7 @@ def create_customfield_dataset(filename, number_of_entries, vo_lower_bound, vo_u
     with open(filename, "a") as fobj:
         fobj.write(json.dumps(dataset, indent=4) + '\n')
 
-    fobj = open(filename, "w")
+    fobj = open(filename, "a")
     fobj.write("\n]")
     fobj.close()
 
