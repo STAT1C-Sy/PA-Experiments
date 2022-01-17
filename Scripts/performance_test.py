@@ -10,7 +10,7 @@ POSTGRES  = True
 if __name__ == "__main__":
     l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
 
-    data_length = len(l)
+    data_length = len(m)
     step_size = int(data_length/20)
     steps = [i*step_size for i in range(1, 21)]
 
