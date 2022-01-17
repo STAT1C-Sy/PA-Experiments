@@ -10,7 +10,7 @@ POSTGRES  = True
 if __name__ == "__main__":
     l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
 
-    data_length = len(m)
+    data_length = len(h)
     step_size = int(data_length/20)
     steps = [i*step_size for i in range(1, 21)]
 
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     for z in range(15):
         print("Test run: " + str(z))
-        for i, d in enumerate(m):
+        for i, d in enumerate(h):
             id = d["uuid"]
 
             #if SINGLE_DB:
