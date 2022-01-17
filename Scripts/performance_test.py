@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     for z in range(15):
         print("Test run: " + str(z))
-        for i, d in enumerate(l):
+        for i, d in enumerate(m):
             id = d["uuid"]
 
             if SINGLE_DB:
