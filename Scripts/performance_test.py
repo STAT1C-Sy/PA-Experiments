@@ -21,12 +21,12 @@ if __name__ == "__main__":
         for i, d in enumerate(l):
             id = d["uuid"]
 
-            #if SINGLE_DB:
-            #    r = requests.get(BASE_URL + "/" + id + "/valueoptions1")
+            if SINGLE_DB:
+                r = requests.get(BASE_URL + "/" + id + "/valueoptions1")
             #if TWO_DB:
             #    r = requests.get(BASE_URL + "/" + id + "/valueoptions2")
-            if POSTGRES:
-                r = requests.get(BASE_URL + "/" + id + "/valueoptions3")
+            #if POSTGRES:
+            #    r = requests.get(BASE_URL + "/" + id + "/valueoptions3")
             
             if i in steps:
                 print("Test: " + str((steps.index(i) + 1) * 5) + "% done (" + str(i) + " of " + str(data_length) + ")")
