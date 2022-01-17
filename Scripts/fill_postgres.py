@@ -2,11 +2,11 @@ import psycopg2
 from common import load_dataset_from_folder
 
 if __name__ == "__main__":
-   l, m, h, vh, vvh = load_dataset_from_folder("14-01-2022_14-18-08-215806")
+   l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
    dataset_meta = []
    dataset_vo = []
 
-   for d in h:
+   for d in l:
       vo_final = []
       for v in d["customFieldValues"]:
          v["metadata"] = d["uuid"]
