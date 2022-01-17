@@ -131,12 +131,13 @@ def generate_customfield_dataset(number_of_entries, vo_lower_bound, vo_upper_bou
     return dataset
 
 def create_customfield_dataset(filename, number_of_entries, vo_lower_bound, vo_upper_bound):
-    fobj = open(filename, "w")
-    fobj.write("[\n")
-    fobj.close()
     dir = os.path.dirname(filename)
     if not os.path.exists(dir):
         os.mkdir(dir)
+
+    fobj = open(filename, "w")
+    fobj.write("[\n")
+    fobj.close()
 
     for i in range(number_of_entries - 1):
         dataset = generate_customfield_dataset(1, vo_lower_bound, vo_upper_bound)[0]
