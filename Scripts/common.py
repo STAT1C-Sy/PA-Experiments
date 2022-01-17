@@ -140,15 +140,15 @@ def create_customfield_dataset(filename, number_of_entries, vo_lower_bound, vo_u
         fobj.write(json.dumps(dataset, indent=4))
 
 def get_prefix():
-    return datetime.now().strftime("%d-%m-%Y_%H-%M-%S-%f")
+    return "./" + datetime.now().strftime("%d-%m-%Y_%H-%M-%S-%f")
 
 def create_dataset(numberOfEntries):
     prefix = get_prefix()
-    create_customfield_dataset(prefix + "\\dataset_low.json", numberOfEntries, 1, 10)
-    create_customfield_dataset(prefix + "\\dataset_mid.json", numberOfEntries, 10, 100)
-    create_customfield_dataset(prefix + "\\dataset_high.json", numberOfEntries, 100, 1000)
-    create_customfield_dataset(prefix + "\\dataset_veryhigh.json", numberOfEntries, 1000, 5000)
-    create_customfield_dataset(prefix + "\\dataset_veryveryhigh.json", numberOfEntries, 5000, 10000)
+    create_customfield_dataset(prefix + "/dataset_low.json", numberOfEntries, 1, 10)
+    create_customfield_dataset(prefix + "/dataset_mid.json", numberOfEntries, 10, 100)
+    create_customfield_dataset(prefix + "/dataset_high.json", numberOfEntries, 100, 1000)
+    create_customfield_dataset(prefix + "/dataset_veryhigh.json", numberOfEntries, 1000, 5000)
+    create_customfield_dataset(prefix + "/dataset_veryveryhigh.json", numberOfEntries, 5000, 10000)
     return prefix
 
 def load_dataset_from_folder(folder):
