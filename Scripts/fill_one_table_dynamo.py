@@ -16,8 +16,8 @@ ATTR_DEFS =[
     ]
         
 PROV_TP = {
-        'ReadCapacityUnits': 10,
-        'WriteCapacityUnits': 10
+        'ReadCapacityUnits': 3000,
+        'WriteCapacityUnits': 1000
     }
 
 if __name__ == "__main__":
