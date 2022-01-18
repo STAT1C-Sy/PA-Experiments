@@ -24,4 +24,4 @@ if __name__ == "__main__":
     client = initialize_dbclient()
     create_table_if_not_exists(client, TABLE_NAME, KEY_SCHEMA, ATTR_DEFS, PROV_TP)
     l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
-    load_dataset(client, TABLE_NAME, m)
+    load_dataset(client, TABLE_NAME, h)
