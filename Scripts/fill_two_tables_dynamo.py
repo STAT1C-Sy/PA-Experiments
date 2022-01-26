@@ -18,14 +18,14 @@ ATTR_DEFS_META =[
 
 #valueoptions
 TABLE_NAME_VO = "CustomfieldValueoptions"
-KEY_SCHEMA_VO = [
-        {
-            'AttributeName': 'id',
-            'KeyType': 'HASH' # Partition key
-        },
+KEY_SCHEMA_VO = [,
         {
             'AttributeName': 'metadata',
-            'KeyType': 'RANGE' # Sort key
+            'KeyType': 'HASH' # Parition key
+        },
+        {
+            'AttributeName': 'id',
+            'KeyType': 'RANGE' #Sort key
         }
     ]
 
