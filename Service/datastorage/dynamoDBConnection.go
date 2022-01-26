@@ -11,6 +11,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
+	"github.com/aws/aws-sdk-go/service/dynamodb/expression"
 )
 
 const (
@@ -77,15 +78,22 @@ func (d DynamoDbConnection) Query(keyname string, key string, valuePtr interface
 		return err
 	}
 
-	result, err := dbClient.Query(&dynamodb.QueryInput{
-		TableName:              aws.String(d.tableName),
-		KeyConditionExpression: aws.String(keyname + " = :key"),
-		ExpressionAttributeValues: map[string]*dynamodb.AttributeValue{
-			":key": {
-				S: aws.String(key),
-			},
-		},
-	})
+	filt := expression.Name(keyname).Equal(expression.Value(key))
+	expr, err := expression.NewBuilder().WithFilter(filt).Build()
+
+	if err != nil {
+		return err
+	}
+
+	params := &dynamodb.ScanInput{
+		ExpressionAttributeNames:  expr.Names(),
+		ExpressionAttributeValues: expr.Values(),
+		FilterExpression:          expr.Filter(),
+		ProjectionExpression:      expr.Projection(),
+		TableName:                 aws.String(d.tableName),
+	}
+
+	result, err := dbClient.Scan(params)
 	if err != nil {
 		return err
 	}
