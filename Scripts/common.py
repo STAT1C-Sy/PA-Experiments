@@ -55,6 +55,7 @@ def create_table_if_not_exists(db, tablename, keys, attributes, provision_info):
         return table 
     except Exception as e:
         print("Table: " + tablename + " already exists!")
+        print(e)
     finally:
         print("Done creating Table: " + tablename + "!")
 
