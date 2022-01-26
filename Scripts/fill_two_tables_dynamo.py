@@ -18,7 +18,7 @@ ATTR_DEFS_META =[
 
 #valueoptions
 TABLE_NAME_VO = "CustomfieldValueoptions"
-KEY_SCHEMA_VO = [,
+KEY_SCHEMA_VO = [
         {
             'AttributeName': 'metadata',
             'KeyType': 'HASH' # Parition key
