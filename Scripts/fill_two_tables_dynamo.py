@@ -49,7 +49,7 @@ if __name__ == "__main__":
     client = initialize_dbclient()
     create_table_if_not_exists(client, TABLE_NAME_META, KEY_SCHEMA_META, ATTR_DEFS_META, PROV_TP)
     create_table_if_not_exists(client, TABLE_NAME_VO, KEY_SCHEMA_VO, ATTR_DEFS_VO, PROV_TP)
-    l, m, h, vh, vvh = load_dataset_from_folder("14-01-2022_14-18-08-215806")
+    l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
     dataset_meta = []
     dataset_vo = []
 
