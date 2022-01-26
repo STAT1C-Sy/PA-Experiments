@@ -20,22 +20,22 @@ ATTR_DEFS_META =[
 TABLE_NAME_VO = "CustomfieldValueoptions"
 KEY_SCHEMA_VO = [
         {
-            'AttributeName': 'metadata',
-            'KeyType': 'RANGE' # Sort key
-        },
-        {
             'AttributeName': 'id',
             'KeyType': 'HASH' # Partition key
+        },
+        {
+            'AttributeName': 'metadata',
+            'KeyType': 'RANGE' # Sort key
         }
     ]
 
 ATTR_DEFS_VO =[
         {
-            'AttributeName': 'metadata',
+            'AttributeName': 'id',
             'AttributeType': 'S'
         },
         {
-            'AttributeName': 'id',
+            'AttributeName': 'metadata',
             'AttributeType': 'S'
         }
     ]
