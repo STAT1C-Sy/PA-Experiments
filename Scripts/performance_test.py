@@ -10,7 +10,7 @@ POSTGRES  = True
 if __name__ == "__main__":
     l, m, h, vh, vvh = load_dataset_from_folder("17-01-2022_09-59-33-913650")
 
-    data_length = len(vh)
+    data_length = len(l)
     step_size = int(data_length/20)
     steps = [i*step_size for i in range(1, 21)]
 
@@ -18,13 +18,13 @@ if __name__ == "__main__":
 
     for z in range(15):
         print("Test run: " + str(z))
-        for i, d in enumerate(vh):
+        for i, d in enumerate(l):
             id = d["uuid"]
 
-            if SINGLE_DB:
-                r = requests.get(BASE_URL + "/" + id + "/valueoptions1")
-            #if TWO_DB:
-            #    r = requests.get(BASE_URL + "/" + id + "/valueoptions2")
+            #if SINGLE_DB:
+            #    r = requests.get(BASE_URL + "/" + id + "/valueoptions1")
+            if TWO_DB:
+                r = requests.get(BASE_URL + "/" + id + "/valueoptions2")
             #if POSTGRES:
             #    r = requests.get(BASE_URL + "/" + id + "/valueoptions3")
             
