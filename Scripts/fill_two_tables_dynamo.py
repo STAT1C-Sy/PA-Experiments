@@ -53,7 +53,7 @@ if __name__ == "__main__":
     dataset_meta = []
     dataset_vo = []
 
-    for d in vh:
+    for d in vvh:
         vo_final = []
         for v in d["customFieldValues"]:
             v["metadata"] = d["uuid"]
