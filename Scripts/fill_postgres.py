@@ -6,7 +6,7 @@ if __name__ == "__main__":
    dataset_meta = []
    dataset_vo = []
 
-   for d in l:
+   for d in m:
       vo_final = []
       for v in d["customFieldValues"]:
          v["metadata"] = d["uuid"]
